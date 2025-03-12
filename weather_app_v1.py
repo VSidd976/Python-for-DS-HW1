@@ -31,10 +31,10 @@ class InvalidUsage(Exception):
         return rv
 
 
-def get_weather(location: str, date: str, unit: str = "metric"):
+def get_weather(location: str, date: str):
     base_url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
 
-    url = f"{base_url}/{location}/{date}?unitGroup={unit}&key={WEATHER_API_KEY}"
+    url = f"{base_url}/{location}/{date}?unitGroup=metric&key={WEATHER_API_KEY}"
 
     response = requests.get(url)
 
